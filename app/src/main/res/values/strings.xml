@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">叽叽阅读</string>
+    <string name="nav_bookstore">书城</string>
+    <string name="nav_bookcase">书架</string>
+    <string name="nav_found">发现</string>
+    <string name="nav_me">我的</string>
+    <string name="search_text">搜索书名/作者</string>
+    <string name="banner_push_text">阅读送铃铛，奖励免费领</string>
+    <string name="menu_all_categories">全部分类</string>
+    <string name="menu_bestsellers">畅销版</string>
+    <string name="menu_vip">VIP会员</string>
+    <string name="menu_sale">促销</string>
+    <string name="menu_free">免费</string>
+    <string name="function_left">幸运转盘</string>
+    <string name="function_left_detail">每日3次抽奖机会</string>
+    <string name="function_right">会员免费读</string>
+    <string name="function_right_detail">每月低至0.2元/天</string>
+    <string name="bookcase_toolbar_title">我的购买</string>
+    <string name="bookcase_toolbar_record">记录</string>
+    <string name="bookcase_toolbar_search">搜索</string>
+    <string name="bookcase_toolbar_clear">整理书房</string>
+    <string name="bookcase_toolbar_rank">名称排序</string>
+    <string name="bookcase_toolbar_giving">赠送图书</string>
+    <string name="bookcase_toolbar_collection">我的收藏</string>
+    <string name="bookcase_toolbar_exchange">我要换书</string>
+    <string name="bookcase_toolbar_import">导入图书</string>
+    <string name="bookstore_toolbar_more">更多</string>
+    <string name="item_channel_title">我的频道</string>
+    <string name="item_channel_edit">编辑</string>
+    <string name="channel_title_all">更多频道</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#36373C</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorMainNavigationBarTextClick">#4FD5B4</color>
+    <color name="colorMainNavigationBarText">#BEC2CB</color>
+    <color name="colorNormalIndicator">#CFCCC3</color>
+    <color name="colorSelectIndicator">#07C391</color>
+    <color name="colorPushNews">#393939</color>
+    <color name="colorMenuText">#AAAAAA</color>
+    <color name="colorFunctionText">#333333</color>
+    <color name="colorBookstoreBannerLine">#42DAA9</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPlanText">#6B6B6B</color>
+    <color name="colorBookcaseBackground">#F5F5F5</color>
+    <color name="colorChannelEdit">#666666</color>
+    <color name="colorChannelEditStroke">#D43D3D</color>
+    <color name="colorChannelIndicator">#8DE6D0</color>
+</resources>

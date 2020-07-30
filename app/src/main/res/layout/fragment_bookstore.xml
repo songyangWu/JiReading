@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.bookstore.BookstoreFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:navigationIcon="@drawable/ic_calendar"
+        app:menu="@menu/bookstore_toolbar_menu">
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/channel_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tl_indicator_color="@color/colorChannelIndicator"
+            app:tl_indicator_height="5dp"
+            app:tl_indicator_gravity="BOTTOM"
+            app:tl_textUnselectColor="@color/colorMenuText"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+        <com.wsy.jireading.widget.EditTextSearch
+            android:id="@+id/edit_text_search"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:textSize="12sp"
+            android:textCursorDrawable="@drawable/shape_cursor_style"
+            android:background="@drawable/shape_round_corner_search_view"
+            android:hint="@string/search_text"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_shopping_cart" />
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

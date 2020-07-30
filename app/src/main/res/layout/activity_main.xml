@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/navigation_bar" />
+
+    <RadioGroup
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="5dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/nav_bookstore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:background="@null"
+            android:drawableTop="@drawable/selector_bookstore"
+            android:checked="true"
+            android:text="@string/nav_bookstore"
+            android:textColor="@drawable/selector_navigation_text" />
+        <RadioButton
+            android:id="@+id/nav_bookcase"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:background="@null"
+            android:drawableTop="@drawable/selector_bookcase"
+            android:text="@string/nav_bookcase"
+            android:textColor="@drawable/selector_navigation_text" />
+        <RadioButton
+            android:id="@+id/nav_found"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:background="@null"
+            android:drawableTop="@drawable/selector_found"
+            android:text="@string/nav_found"
+            android:textColor="@drawable/selector_navigation_text"/>
+        <RadioButton
+            android:id="@+id/nav_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:button="@null"
+            android:background="@null"
+            android:drawableTop="@drawable/selector_me"
+            android:text="@string/nav_me"
+            android:textColor="@drawable/selector_navigation_text"/>
+    </RadioGroup>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="OverFlowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <!-- 是否覆盖锚点，默认为true，即溢出菜单会盖住Toolbar -->
+        <item name="overlapAnchor">false</item>
+        <!-- 溢出菜单背景色 -->
+        <item name="android:popupBackground">@color/colorWhite</item>
+        <!-- 分隔线 -->
+        <item name="dropDownListViewStyle">@style/PopupMenuLine</item>
+    </style>
+
+    <style name="PopupMenuLine" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">#ECECEC</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <style name="dialogSlideAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_slide_out</item>
+    </style>
+</resources>
