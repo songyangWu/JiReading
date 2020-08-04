@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="channel">
+        <item>精选</item>
+        <item>文学</item>
+        <item>经济</item>
+        <item>政治</item>
+        <item>历史</item>
+        <item>艺术</item>
+        <item>旅游</item>
+        <item>时尚</item>
+        <item>其他</item>
+    </string-array>
+</resources>
