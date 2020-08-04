@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp">
+        android:paddingRight="10dp"
+        android:scrollbars="none">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -208,6 +209,63 @@
                         android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="@string/bookstore_list_type1"
+                    android:textColor="@color/colorFunctionText"
+                    android:textStyle="bold"
+                    android:textSize="17sp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="查看更多"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorChannelEdit" />
+                <ImageView
+                    android:id="@+id/iv_type1_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_more" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView_SecKill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/category_tab"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                app:tl_indicator_color="@color/colorChannelIndicator"
+                app:tl_indicator_width_equal_title="true"
+                app:tl_textUnselectColor="@color/colorMenuText"
+                app:tl_textSelectColor="@color/colorFunctionText"
+                app:tl_textsize="15sp" />
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/category_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/shape_category_background" />
+
         </LinearLayout>
     </ScrollView>
 

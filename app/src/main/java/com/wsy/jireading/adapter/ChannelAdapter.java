@@ -26,7 +26,7 @@ import java.util.List;
  * Date:2020/7/28
  */
 public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel, BaseViewHolder> {
-    private BaseViewHolder mEditViewHolder;
+    BaseViewHolder mEditViewHolder;
     private boolean isEdit;
     private long startTime;
     // 点触间隔时间 用于分辨是否是“点击”
@@ -83,7 +83,7 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel, BaseViewH
                 break;
             case Channel.TYPE_MY_CHANNEL:
                 //我的频道 列表
-                baseViewHolder.setVisible(R.id.channelDelete, isEdit && !(channel.getTitle().equals("推荐")))//编辑模式就显示删出按钮，除了“推荐”
+                baseViewHolder.setVisible(R.id.channelDelete, isEdit && !(channel.getTitle().equals("精选")))//编辑模式就显示删出按钮，除了“精选”
                         .setOnLongClickListener(R.id.channel_item, new View.OnLongClickListener() {
                             @Override
                             public boolean onLongClick(View v) {
@@ -229,7 +229,7 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel, BaseViewH
             ImageView imgEdit = (ImageView) view.findViewById(R.id.channelDelete);
             if (imgEdit != null) {
                 boolean isVisible = imgEdit.getTag() == null ? false : (boolean) imgEdit.getTag();
-                imgEdit.setVisibility(isVisible && !mData.get(i).getTitle().equals("推荐") ? View.VISIBLE : View.INVISIBLE);
+                imgEdit.setVisibility(isVisible && ! mData.get(i).getTitle().equals("精选") ? View.VISIBLE : View.INVISIBLE);
             }
         }
     }

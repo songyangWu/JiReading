@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.provider.SyncStateContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.wsy.jireading.R;
 import com.wsy.jireading.adapter.ChannelAdapter;
+import com.wsy.jireading.constant.Constant;
 import com.wsy.jireading.listener.ItemDragHelperCallBack;
 import com.wsy.jireading.listener.OnChannelDragListener;
 import com.wsy.jireading.listener.OnChannelListener;
@@ -29,17 +30,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ChannelDialogFragment extends DialogFragment implements OnChannelDragListener {
-    public static final String DATA_SELECTED = "dataSelected";
-    public static final String DATA_UNSELECTED = "dataUnselected";
-
+public class ChannelDialogFragment extends DialogFragment implements View.OnClickListener, OnChannelDragListener {
     private List<Channel> mData = new ArrayList<>();
     private ChannelAdapter mAdapter;
-    @BindView(R.id.channelRecycleView)
+
     private RecyclerView mRecyclerView;
+    private ImageView imageView;
+
     private ItemTouchHelper mHelper;
 
     private OnChannelListener mOnChannelListener;
@@ -64,7 +65,11 @@ public class ChannelDialogFragment extends DialogFragment implements OnChannelDr
      */
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_channel_dialog, container, false);
+        View view = inflater.inflate(R.layout.fragment_channel_dialog, null);
+
+        mRecyclerView = view.findViewById(R.id.channelRecycleView);
+        imageView = view.findViewById(R.id.channel_exit);
+        imageView.setOnClickListener(this);
 
         Dialog dialog = getDialog();
         if (dialog != null) {
@@ -89,26 +94,26 @@ public class ChannelDialogFragment extends DialogFragment implements OnChannelDr
         //2、方便的处理Adapter里的ViewHolder绑定问题
         //3、运行时不会影响APP效率，使用配置方便
         //4、代码清晰，可读性强
-        ButterKnife.bind(this, view);
+        //ButterKnife.bind(this, view);
         processLogic();
     }
 
     //数据处理逻辑
     private void processLogic() {
-        mData.add(new Channel(Channel.TYPE_MY, "我的频道", ""));
+        mData.add(new Channel(Channel.TYPE_MY, "我的频道"));
 
         Bundle bundle = getArguments();
-        List<Channel> selectedData = (List<Channel>) bundle.getSerializable(DATA_SELECTED);
-        List<Channel> unselectedData = (List<Channel>) bundle.getSerializable(DATA_UNSELECTED);
+        List<Channel> selectedData = (List<Channel>) bundle.getSerializable(Constant.DATA_SELECTED);
+        List<Channel> unselectedData = (List<Channel>) bundle.getSerializable(Constant.DATA_UNSELECTED);
         setDataType(selectedData, Channel.TYPE_MY_CHANNEL);
         setDataType(unselectedData, Channel.TYPE_OTHER_CHANNEL);
 
         mData.addAll(selectedData);
-        mData.add(new Channel(Channel.TYPE_OTHER, "频道推荐", ""));
+        mData.add(new Channel(Channel.TYPE_OTHER, "频道推荐"));
         mData.addAll(unselectedData);
 
         mAdapter = new ChannelAdapter(mData);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),4);
         mRecyclerView.setLayoutManager(gridLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -141,13 +146,12 @@ public class ChannelDialogFragment extends DialogFragment implements OnChannelDr
     public static ChannelDialogFragment bookInstance(List<Channel> selectedData, List<Channel> unselectedData) {
         ChannelDialogFragment dialogFragment = new ChannelDialogFragment();
         Bundle bundle = new Bundle();
-        bundle.putSerializable(DATA_SELECTED, (Serializable) selectedData);
-        bundle.putSerializable(DATA_UNSELECTED, (Serializable) unselectedData);
+        bundle.putSerializable(Constant.DATA_SELECTED, (Serializable) selectedData);
+        bundle.putSerializable(Constant.DATA_UNSELECTED, (Serializable) unselectedData);
         dialogFragment.setArguments(bundle);
         return dialogFragment;
     }
 
-    @OnClick(R.id.channel_exit)
     public void onClick(View view) {
         dismiss();
     }

@@ -1,5 +1,7 @@
 package com.wsy.jireading.model;
 
+import androidx.fragment.app.Fragment;
+
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import java.io.Serializable;
@@ -16,16 +18,16 @@ public class Channel implements MultiItemEntity, Serializable {
 
     private int itemType;
     private String title;
-    private String channelCode;
+    private transient Fragment fragment;
 
-    public Channel(String title, String channelCode) {
-        this(TYPE_MY_CHANNEL, title, channelCode);
+    public Channel(String title, Fragment fragment) {
+        this.title = title;
+        this.fragment = fragment;
     }
 
-    public Channel(int itemType, String title, String channelCode) {
-        this.title = title;
-        this.channelCode = channelCode;
+    public Channel(int itemType, String title) {
         this.itemType = itemType;
+        this.title = title;
     }
 
     public int getItemType() {
@@ -44,11 +46,11 @@ public class Channel implements MultiItemEntity, Serializable {
         this.title = title;
     }
 
-    public String getChannelCode() {
-        return channelCode;
+    public Fragment getFragment() {
+        return fragment;
     }
 
-    public void setChannelCode(String channelCode) {
-        this.channelCode = channelCode;
+    public void setFragment(Fragment fragment) {
+        this.fragment = fragment;
     }
 }

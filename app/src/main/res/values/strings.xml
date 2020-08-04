@@ -27,5 +27,6 @@
     <string name="bookstore_toolbar_more">更多</string>
     <string name="item_channel_title">我的频道</string>
     <string name="item_channel_edit">编辑</string>
-    <string name="channel_title_all">更多频道</string>
+    <string name="channel_title_all">全部频道</string>
+    <string name="bookstore_list_type1">今日秒杀</string>
 </resources>

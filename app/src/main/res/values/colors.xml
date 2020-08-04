@@ -17,4 +17,5 @@
     <color name="colorChannelEdit">#666666</color>
     <color name="colorChannelEditStroke">#D43D3D</color>
     <color name="colorChannelIndicator">#8DE6D0</color>
+    <color name="colorAuthorText">#A2A2A2</color>
 </resources>
